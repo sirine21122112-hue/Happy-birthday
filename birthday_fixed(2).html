@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Lilia❤️</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+
+            overflow: hidden;
+            background: linear-gradient(160deg, #2b0000, #660018, #b00020, #ff1744);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+
+        }
+
+        .page {
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: 1s;
+            opacity: 1;
+
+        }
+
+        .hidden {
+
+            opacity: 0;
+            pointer-events: none;
+
+        }
+
+        h1 {
+
+            font-size: 65px;
+            text-shadow: 0 0 25px #ff6b81;
+            margin-bottom: 20px;
+
+        }
+
+        p {
+
+            font-size: 22px;
+            color: #d7f4ff;
+
+        }
+
+        button {
+
+            margin-top: 35px;
+            padding: 16px 45px;
+            font-size: 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: #0d1528;
+            color: white;
+            border: 2px solid #ff4d6d;
+            box-shadow: 0 0 25px #ff1744;
+            transition: .4s;
+
+        }
+
+        button:hover {
+
+            transform: scale(1.08);
+
+            box-shadow: 0 0 40px #ff4d6d;
+
+        }
+
+        .stars {
+
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -5;
+
+        }
+
+        .star {
+
+            position: absolute;
+            color: white;
+            animation: fall linear infinite;
+
+        }
+
+        @keyframes fall {
+
+            0% {
+
+                transform: translateY(-120px);
+
+                opacity: 0;
+
+            }
+
+            20% {
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                transform: translateY(110vh);
+
+                opacity: 0;
+
+            }
+
+        }
+
+        .gift {
+
+            width: 240px;
+            height: 240px;
+            background: #0f1b31;
+            border-radius: 25px;
+            position: relative;
+            cursor: pointer;
+            margin-top: 40px;
+            box-shadow: 0 0 40px #ff2d55;
+            transition: .5s;
+
+        }
+
+        .gift:hover {
+
+            transform: scale(1.08) rotate(-4deg);
+
+        }
+
+        .lid {
+
+            position: absolute;
+            top: -25px;
+            left: -5px;
+            width: 250px;
+            height: 50px;
+            background: #ff2d55;
+            border-radius: 15px;
+
+        }
+
+        .ribbonV {
+
+            position: absolute;
+            left: 110px;
+            width: 20px;
+            height: 240px;
+            background: white;
+
+        }
+
+        .ribbonH {
+
+            position: absolute;
+            top: 110px;
+            height: 20px;
+            width: 240px;
+            background: white;
+
+        }
+
+        .bow {
+
+            position: absolute;
+            top: -35px;
+            left: 76px;
+            font-size: 60px;
+
+        }
+
+        #count {
+
+            font-size: 150px;
+
+            text-shadow: 0 0 50px #ff6b81;
+
+            animation: pulse 1s infinite;
+
+        }
+
+        @keyframes pulse {
+
+            50% {
+
+                transform: scale(1.2);
+
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    
+
+    <!-- الصفحة الأولى -->
+
+    <div class="page" id="home">
+
+        <h1>Made with love
+
+             just for u ❤️</h1>
+
+        <p>open your gift</p>
+
+        <div class="gift" onclick="openGift()">
+
+            <div class="lid"></div>
+
+            <div class="ribbonV"></div>
+
+            <div class="ribbonH"></div>
+
+            <div class="bow">🎀</div>
+
+        </div>
+
+    </div>
+
+    <!-- العد -->
+
+    <div class="page hidden" id="countPage">
+
+        <h1 id="count">3</h1>
+
+        <p>Get Ready...</p>
+
+    </div><!-- ========================= -->
+    <!-- 🎂 Cake Page -->
+    <!-- ========================= -->
+    
+    <div class="page hidden" id="cakePage">
+    
+        <h1>🎂 Make A Wish</h1>
+    
+        <div class="cake">
+    
+            <div class="candles">
+    
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+    
+            </div>
+    
+            <div class="layer top"></div>
+            <div class="layer middle"></div>
+            <div class="layer bottom"></div>
+    
+        </div>
+    
+        <button onclick="blowCandles()">
+            ✨ Blow The Candles ✨
+        </button>
+    
+    </div>
+    
+    
+    <!-- ========================= -->
+    <!-- 📸 Gallery -->
+    <!-- ========================= -->
+    
+    <div class="page hidden" id="galleryPage">
+    
+        <h1>Our Memories</h1>
+    
+        <p style="margin-bottom:20px;">
+        Every photo holds a special memory ❤️
+        </p>
+    
+        <div class="gallery">
+    
+            <img id="photo" src="photo (1).jpg">
+    
+        </div>
+    
+        <button onclick="nextPhoto()">
+            Next Photo ➜
+        </button>
+    
+    </div>
+    
+    
+    <style>
+        .cake {
+    
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+        }
+    
+        .candles {
+    
+            display: flex;
+            gap: 28px;
+            margin-bottom: 10px;
+    
+        }
+    
+        .candle {
+    
+            width: 12px;
+            height: 45px;
+            background: white;
+            border-radius: 5px;
+            position: relative;
+    
+        }
+    
+        .flame {
+    
+            width: 14px;
+            height: 20px;
+            background: #ff6b81;
+            position: absolute;
+            top: -20px;
+            left: -1px;
+            border-radius: 50%;
+            box-shadow: 0 0 25px #ff6b81;
+            animation: flicker .4s infinite alternate;
+    
+        }
+    
+        @keyframes flicker {
+    
+            from {
+                transform: scale(1);
+            }
+    
+            to {
+                transform: scale(1.25);
+            }
+    
+        }
+    
+        .layer {
+    
+            background: #101828;
+            border: 2px solid #ff2d55;
+            box-shadow: 0 0 25px #ff2d55;
+            border-radius: 16px;
+            margin: 6px;
+    
+        }
+    
+        .top {
+    
+            width: 130px;
+            height: 55px;
+    
+        }
+    
+        .middle {
+    
+            width: 190px;
+            height: 65px;
+    
+        }
+    
+        .bottom {
+    
+            width: 260px;
+            height: 75px;
+    
+        }
+    
+        .gallery{
+    width:390px;
+    height:520px;
+    padding:12px;
+    border-radius:25px;
+    background:#101828;
+    border:2px solid #ff2d55;
+    box-shadow:0 0 35px #ff2d55;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+   .gallery img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    border-radius:18px;
+}
+    </style>
+    
+    
+    <script>
+
+        let photos = [
+
+            "photo (1).jpg",
+            "photo (2).jpg",
+            "photo (3).jpg",
+            "photo (4).jpg",
+
+        ];
+
+        let current = 0;
+
+        function openGift() {
+
+            document.getElementById("home").classList.add("hidden");
+            document.getElementById("countPage").classList.remove("hidden");
+
+            let n = 3;
+
+            let timer = setInterval(function () {
+
+                n--;
+
+                if (n > 0) {
+
+                    document.getElementById("count").innerHTML = n;
+
+                } else {
+
+                    clearInterval(timer);
+
+                    document.getElementById("countPage").classList.add("hidden");
+                    document.getElementById("cakePage").classList.remove("hidden");
+
+                }
+
+            }, 1000);
+
+        }
+
+        function blowCandles() {
+
+                document.querySelectorAll(".flame").forEach(function (f) {
+                    f.style.opacity = "0";
+                });
+
+                let music = document.getElementById("music");
+                music.volume = 0.5;
+                music.play();
+
+                setTimeout(function () {
+                    document.getElementById("cakePage").classList.add("hidden");
+                    document.getElementById("galleryPage").classList.remove("hidden");
+                }, 1500);
+            }
+
+        function nextPhoto() {
+
+            current++;
+
+            if (current >= photos.length) {
+
+                document.getElementById("galleryPage").classList.add("hidden");
+                document.getElementById("messagePage").classList.remove("hidden");
+
+                return;
+
+            }
+
+            document.getElementById("photo").src = photos[current];
+
+        }
+
+    </script>
+    
+    
+        <p id="resultMessage"></p>
+    
+    </div>
+    <!-- ========================= -->
+    <!-- 💌 Final Message -->
+    <!-- ========================= -->
+    
+    <div class="page hidden" id="messagePage">
+    
+    <h1>🎂 Happy birthday laylaaa</h1>
+    
+        <div id="message">
+   
+            <p>
+    
+            
+    
+        
+        Happy Birthday sis 🎉❤️
+        Wishing u lots of happiness, good health and all the best love u 🥳🎂
+    
+            </p>
+    
+        </div>
+    
+    </div>
+    
+    
+<audio id="music">
+    <source src="IMG_8462.mp3" type="audio/mpeg">
+</audio>
+    
+    <style>
+        #message {
+    
+            width: 85%;
+            max-width: 900px;
+            max-height: 70vh;
+    
+            overflow: auto;
+    
+            padding: 35px;
+    
+            border-radius: 25px;
+    
+            background: rgba(8, 20, 45, .55);
+    
+            backdrop-filter: blur(15px);
+    
+            border: 2px solid #ff2d55;
+    
+            box-shadow: 0 0 40px #ff2d55;
+    
+            font-size: 22px;
+    
+            line-height: 2;
+    
+            animation: fade 1s;
+    
+        }
+    
+        /* قلوب متحركة */
+    
+        .heart {
+    
+            position: fixed;
+    
+            font-size: 24px;
+    
+            animation: floatHeart linear forwards;
+    
+            pointer-events: none;
+    
+        }
+    
+        @keyframes floatHeart {
+    
+            0% {
+    
+                transform: translateY(0) scale(.5);
+    
+                opacity: 0;
+    
+            }
+    
+            20% {
+    
+                opacity: 1;
+    
+            }
+    
+            100% {
+    
+                transform: translateY(-110vh) scale(1.5);
+    
+                opacity: 0;
+    
+            }
+    
+        }
+    </style>
+    
+    
+    <script>
+
+        /* ❤️ قلوب */
+
+        setInterval(function () {
+
+            let h = document.createElement("div");
+
+            h.className = "heart";
+
+            h.innerHTML = ["❤️", "🤍", "🤍", "💕"][Math.floor(Math.random() * 4)];
+
+            h.style.left = Math.random() * 100 + "vw";
+
+            h.style.bottom = "-30px";
+
+            h.style.animationDuration = (5 + Math.random() * 4) + "s";
+
+            document.body.appendChild(h);
+
+            setTimeout(function () {
+
+                h.remove();
+
+            }, 9000);
+
+        }, 350);
+
+
+    
+
+    </script>
+    
+    </body>
+    
+    </html>
